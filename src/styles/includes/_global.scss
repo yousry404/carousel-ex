@@ -1,0 +1,30 @@
+body{
+  padding: 0px;
+  margin: 0px;
+}
+*:focus{
+  outline: none;
+}
+img{
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+input[type="text"],input[type="search"],input[type="email"],textarea,select{
+  border: 0;
+  // border-bottom: 2px $grey3 solid;
+  // background: $white;
+  // color: $grey;
+}
+select{
+  -webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url('/assets/images/arrow-dd.svg');
+  background-size: font-rem(12);
+	background-repeat:no-repeat;
+	background-position: calc(100% - #{font-rem(12)}) center;
+	padding-right:font-rem(32);
+}
+iframe{
+  max-width: 100%;
+}

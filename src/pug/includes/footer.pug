@@ -1,0 +1,20 @@
+footer
+  .container
+    .row
+      .col-md-6
+        a(href="#").follow-us Follow Us On
+        
+        mixin logo(source)
+          a(href="#").logo
+            img(src="../../assets/images/"+source+".png")
+              
+        +logo('f')
+        +logo('t')
+        +logo('l')
+        +logo('y')
+      
+      .col-md-6
+        a(href="#").terms Privacy Policy
+        a(href="#").terms Terms of Service
+        p.copyrights Copyright &copy; 2017 CI Capital, All rights reserved
+        

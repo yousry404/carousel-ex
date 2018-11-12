@@ -1,0 +1,33 @@
+extends layout/layout.pug
+
+block vars
+	-var title='Home'
+	-var description = 'Brilliant Designs, That Work Brilliantly.'
+	-var pageClass = 'homePage'
+block content
+	article
+		.container-wide
+			h2 Success Stories
+			.container-wide__content
+				.container-wide__content__image
+					- var values = ['1','2','3','people','3'];
+					each val,index in values
+						img(src=`../../assets/images/${val}.jpg` id=`image${index+1}` class="childImage")
+					.container-wide__content__buttons
+						.container-wide__content__buttons__left.sibling.left#left
+							img(src="../../assets/images/arrow-l.png")
+						.container-wide__content__buttons__right.sibling.rigth#right
+							img(src="../../assets/images/arrow-r.png")
+					.container-wide__content__image__indicator
+						each val,index in values
+							div(id=`indicator${index+1}` data-ind=index+1 class="childIndicator")
+				.container-wide__content__info
+					img(src="../../assets/images/logo.jpg")
+					.container-wide__content__info__percent
+						p.blue 98
+							span %
+						p.secondary 98M
+							span Raised
+						p.secondary 100M
+							span Target 
+					p.container-wide__content__info__text AX is company that lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo the commodo. Proin sodales pulvinar tempor. Cum sociis best penatibus et magnis dis parturient montes.

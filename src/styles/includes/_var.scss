@@ -1,0 +1,31 @@
+$font_base : 16;
+@function font-rem($font_size) {
+  @return ($font_size / $font_base)+rem;
+}
+
+$montserrat : 'Montserrat', sans-serif;
+$primary: #3b3d44 !default;
+$white-blue: #f0f3f8;
+$blue: #00cfd6;
+$white: #fff;
+
+// $body-color: $grey !default;
+
+
+
+
+@mixin aboveTablet(){
+  @media (min-width: 1023px){@content;}
+}
+@mixin aboveMobile(){
+  @media (min-width: 992px){@content;}
+}
+@mixin aboveSmallMobile(){
+  @media (min-width: 768px){@content;}
+}
+@mixin belowTablet(){
+  @media (max-width: 1022px){@content;}
+}
+@mixin belowMobile(){
+  @media (max-width: 991px){@content;}
+}

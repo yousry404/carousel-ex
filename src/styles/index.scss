@@ -1,0 +1,327 @@
+@import "includes/_var";
+@import "includes/_bootstrap";
+
+@import "includes/_global";
+@import "includes/_fonts";
+* {
+  box-sizing: border-box;
+}
+header{
+  background: #999;
+  overflow: hidden;
+  
+  .content {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    position: relative;
+    .nav {
+      padding: font-rem(30) 5% 0 5%;
+      display: flex;
+      flex-direction: row; 
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      .links {
+        display: flex;
+        flex-direction: row;
+        height: font-rem(35);
+        font-family: $montserrat;
+        font-weight: 500;
+        .req {
+          color: $white;
+          text-decoration: none;
+          line-height: font-rem(35);
+          text-transform: uppercase;
+          font-size: font-rem(15);
+        }
+        .login {
+          display: block;
+          background: $blue;
+          transform: skewX(20deg);
+          line-height: font-rem(35);
+          text-decoration: none;
+          padding: 0 font-rem(50);
+          margin-left: font-rem(20);
+          font-size: font-rem(14);
+          span {
+            display: block;
+            transform: skewX(-20deg);
+            color: $white;
+            text-transform: uppercase; 
+          }
+        }
+      }
+      
+    }
+    .startup, .investor {
+      width: 50%;
+      &__content {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: font-rem(98);
+        line-height: font-rem(98);
+        background: $blue;
+        color: $white;
+        font-family: $montserrat;
+        font-weight: 600;
+        font-size: font-rem(30);
+        padding: 0 font-rem(30);
+        z-index: 2;
+        a {
+          color: $white;
+          text-decoration: none;
+          background: url("../../assets/images/down_arrow.svg") no-repeat;
+          background-position: 100% 60%;
+          padding-right: font-rem(40);
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          width: font-rem(40);
+          left: calc( 100% - 20px );
+          top: 0;
+          bottom: 0;
+          // height: 100%;
+          z-index: 0;
+          transform: skewX(20deg);
+          background: $blue;
+        }
+        
+      }
+    }
+    .startup {
+      background: url("../../assets/images/bg1.jpg") no-repeat;
+      background-size: cover;
+      position: relative;
+      &__content {
+        
+      }
+    }
+    .investor {
+      background: url("../../assets/images/bg2.jpg") no-repeat;
+      background-size: cover;
+      position: relative;
+      &__content {
+        
+      }
+    }
+    .title {
+      width: 100%;
+      position: absolute;
+      height: font-rem(100);
+      top: calc( 40% - 50px );
+      text-align: center;
+      font-family: $montserrat;
+      font-size: font-rem(60);
+      color: $white;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      line-height: font-rem(100);
+      margin: 0;
+      .trusted {
+        font-weight: 700;
+        text-shadow: 1px 3px 9px rgba(59, 60, 68, 0.47); 
+        text-transform: uppercase;
+
+      }
+      .investment {
+        font-weight: 500;
+        display: block;
+        margin-left: font-rem(10);
+        transform: skewX(-10deg);
+        text-shadow: 1px 3px 9px rgba(59, 60, 68, 0.47); 
+      }
+      @media (max-width: 953px){
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+
+article{
+  background-color: $white-blue;
+  display: flex;
+  justify-content: center;
+  padding: font-rem(60) 0;
+  @keyframes moveleftcurrent {
+    from {left: 0;}
+    to {left: -100%;}
+  }
+  @keyframes moveleftcoming {
+    from {left: 100%;}
+    to {left: 0;}
+  }
+  @keyframes moverightcurrent {
+    from {left: 0;}
+    to {left: 100%;}
+  }
+  @keyframes moverightcoming {
+    from {left: -100%;}
+    to {left: 0;}
+  }
+  .container-wide {
+    width: 80%;      
+    font-family: $montserrat;
+
+    h2 {
+      font-weight: 500;
+      color: $primary;
+      font-size: font-rem(40);
+      position: relative;
+      display: inline-block;
+      &:after {
+        content: "";
+        position: absolute;
+        top: calc( 100% + 10px );
+        left: 0;
+        width: 20%;
+        background: $blue;
+        height: font-rem(3);
+      }
+    }
+    &__content {
+      margin-top: font-rem(40);
+      display: flex;
+      flex-direction: row;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+      &__image {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        
+        .childImage {
+          position: absolute;
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+          @media (max-width: 768px) {
+            &:first-of-type {
+              position: relative;
+
+            }
+          } 
+        }
+        
+        .childImage + .childImage {
+          left: 100%;
+        }
+        
+        &__indicator {
+          position: absolute;
+          bottom: font-rem(20);
+          left: 25%;
+          width: 50%;
+          height: font-rem(40);
+          background: rgba(0,0,0,0.5);
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          border-radius: font-rem(10);
+          .childIndicator {
+            height: font-rem(20);
+            width: font-rem(20);
+            border-radius: font-rem(5);
+            background: $white-blue;
+            cursor: pointer;
+          }
+          .active {
+            background: $blue;
+          }
+        }
+        
+        
+      }
+      &__buttons {
+        align-self: flex-end;
+        height: font-rem(65);
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: $white;
+        z-index: 5;
+        &__left, &__right {
+          width: font-rem(65);
+          text-align: center;
+          line-height: font-rem(65);
+          cursor: pointer;
+        }
+      }
+      &__info {
+        padding: font-rem(45) 8% font-rem(60) 4%;
+        background: $white;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        &:after {
+          content: "";
+          background: $white-blue;
+          position: absolute;
+          top: 42%;
+          bottom: 22%;
+          left: 70%;
+          width: font-rem(100);
+          -ms-transform: matrix(1, 0, 0.5, 1, 150, 0); /* IE 9 */
+          -webkit-transform: matrix(1, 0, 0.5, 1, 150, 0); /* Safari */
+          transform: matrix(1, 0, 0.5, 1, 150, 0); /* Standard syntax */
+        }
+        &__percent {
+          width: 100%;
+          padding: font-rem(100) 0 font-rem(50) 0;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+          p {
+            margin: 0;
+          }
+          p + p {
+            margin-left: font-rem(45);
+          }
+          .blue {
+            color: $blue;
+            font-size: font-rem(66);
+            font-weight: 500;
+            line-height: font-rem(33);
+            span{
+              font-size: font-rem(30);
+            }
+          }
+          .secondary {
+            color: $primary;
+            font-weight: 500;
+            font-size: font-rem(24);
+            span {
+              display: block;
+              font-weight: 300;
+              font-size: font-rem(16);
+            }
+          }
+          &__text {
+            color: $primary;
+            font-weight: 300;
+            font-size: font-rem(16);
+          }
+          @media (max-width: 992px) {
+            flex-direction: column;
+            align-items: flex-start;
+            p + p {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
